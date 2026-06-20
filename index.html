@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giriş Paneli</title>
+    <title>GameHub | Login</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="Resimler/logo.png">
 </head>
@@ -11,22 +11,27 @@
 
     <div class="login-container">
         <div class="form-box">
-            <span class="developer-tag">Geliştirici: Yağız Arslan</span>
-            
-            <h2>Gamer Girişi</h2>
-            <p class="demo-info">Giriş: admin | Şifre: 1234</p>
-            
+            <span class="developer-tag">Developed by Yağız Arslan</span>
+
+            <h2>Welcome Back</h2>
+            <p class="demo-info">Demo Account: <strong>admin</strong> | Password: <strong>1234</strong></p>
+
             <form id="loginForm">
                 <div class="input-group">
                     <input type="text" id="username" required>
-                    <label>Kullanıcı Adı</label>
+                    <label>Username</label>
                 </div>
+
                 <div class="input-group">
                     <input type="password" id="password" required>
-                    <label>Şifre</label>
+                    <label>Password</label>
                 </div>
+
                 <div id="errorMessage" class="error-text"></div>
-                <button type="submit" class="btn">Sisteme Giriş Yap</button>
+
+                <button type="submit" class="btn">
+                    Sign In
+                </button>
             </form>
         </div>
     </div>
@@ -37,16 +42,18 @@
 
         loginForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
             const userIn = document.getElementById('username').value;
             const passIn = document.getElementById('password').value;
 
             if (userIn === "admin" && passIn === "1234") {
                 window.location.href = "oyunlar.html";
             } else {
-                errorMessage.textContent = "Hatalı Kullanıcı Adı veya Şifre!";
+                errorMessage.textContent = "Invalid username or password.";
                 errorMessage.style.display = 'block';
             }
         });
     </script>
+
 </body>
 </html>
