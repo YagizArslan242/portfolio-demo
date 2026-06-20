@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Paneli</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="Resimler/logo.png">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="form-box">
+            <span class="developer-tag">Geliştirici: Yağız Arslan</span>
+            
+            <h2>Gamer Girişi</h2>
+            <p class="demo-info">Giriş: admin | Şifre: 1234</p>
+            
+            <form id="loginForm">
+                <div class="input-group">
+                    <input type="text" id="username" required>
+                    <label>Kullanıcı Adı</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required>
+                    <label>Şifre</label>
+                </div>
+                <div id="errorMessage" class="error-text"></div>
+                <button type="submit" class="btn">Sisteme Giriş Yap</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        const errorMessage = document.getElementById('errorMessage');
+
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const userIn = document.getElementById('username').value;
+            const passIn = document.getElementById('password').value;
+
+            if (userIn === "admin" && passIn === "1234") {
+                window.location.href = "oyunlar.html";
+            } else {
+                errorMessage.textContent = "Hatalı Kullanıcı Adı veya Şifre!";
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
